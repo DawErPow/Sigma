@@ -62,7 +62,7 @@ const deleteGame = async (req, res, next) => {
 };
 
 const checkEmptyFields = async (req, res, next) => {
-  if (req.isVoteRequest) {
+  if(req.isVoteRequest) {
     next();
     return;
   }
@@ -81,7 +81,7 @@ const checkEmptyFields = async (req, res, next) => {
 };
 
 const checkIfCategoriesAvaliable = async (req, res, next) => {
-  if (req.isVoteRequest) {
+  if(req.isVoteRequest) {
     next();
     return;
   }
@@ -120,10 +120,11 @@ const checkIsGameExists = async (req, res, next) => {
 };
 
 const checkIsVoteRequest = async (req, res, next) => {
-  if (Object.keys(req.body).length === 1 && req.body.users) {
-    req.isVoteRequest = true;
-  }
-  next();
+  // Если в запросе присылают только поле users
+if (Object.keys(req.body).length === 1 && req.body.users) {
+  req.isVoteRequest = true;
+}
+next();
 };
 
 module.exports = {
