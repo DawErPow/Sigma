@@ -1,7 +1,7 @@
 const allowedCors = [
-  'https://practicum.yandex.ru/',
-  'https://students-projects.ru/',
-  'https://kamenskiyegorback.nomorepartiesco.ru/'
+  'https://practicum.yandex.ru',
+  'https://students-projects.ru',
+  'https://kamenskiyegorback.nomorepartiesco.ru'
 ];
 
 function cors(req, res, next) {
